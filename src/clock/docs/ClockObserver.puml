@@ -1,0 +1,25 @@
+@startuml
+
+class ClockSubjectService {
+    -subscriberList
+    -subscribedSubjectMap
+    +attach()
+    +detach()
+    +publish()
+}
+
+class clock {
+    +onTick
+}
+
+interface ClockObserver {
+    +update
+}
+
+class DigitalClock {
+    +update
+}
+
+ClockObserver <|-- DigitalClock
+ClockObserver <-- ClockSubjectService
+@enduml
