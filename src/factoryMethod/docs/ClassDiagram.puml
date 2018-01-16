@@ -1,0 +1,31 @@
+@startuml Factory Pattern
+class BankFactory{
+	-Map<BankEnum, BankService> bankServiceMap;
+	+BankFactory();
+	+void init();
+	+BankService getBankService();
+}
+interface BankService {
+    +String authorize()
+}
+class NCCCBankService{
+	+String authorize()
+}
+class CTBCBankService{
+	+String authorize()
+}
+class TSPGBankService{
+	+String authorize()
+}
+class CATHYBankService{
+	+String authorize()
+}
+class BankEnum
+
+BankService <|.. NCCCBankService
+BankService <|.. CTBCBankService
+BankService <|.. TSPGBankService
+BankService <|.. CATHYBankService
+BankFactory ..> BankEnum
+BankFactory ..> BankService
+@enduml
