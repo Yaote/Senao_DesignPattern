@@ -1,0 +1,35 @@
+@startuml Builder pattern
+interface ComputerBuilderService {
+    +buildComputer()
+}
+class ComputerBuilderServiceImpl{
+}
+abstract class Computer {
+    -cpu;
+	-hdd;
+	-ram;
+	-mainBoard;
+	-vga;
+	-getCpu();
+	-getHdd();
+	-getRam();
+	-getMainBoard();
+	-getVga();
+	+setCpu();
+	+setHdd();
+	+setRam();
+	+setMainBoard();
+	+setVga();
+	+show();
+	+addPart();    
+}
+class Desktop
+class Laptop
+class ComputerEnum
+
+Computer <|.. Desktop
+Computer <|.. Laptop
+ComputerBuilderService <|- ComputerBuilderServiceImpl
+ComputerBuilderServiceImpl *-> Computer
+
+@enduml
