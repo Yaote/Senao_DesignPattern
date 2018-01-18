@@ -1,0 +1,54 @@
+@startuml Builder pattern
+interface CosplayShopService {
+    +CostumeFactory getFactory()
+    +List<Equipment> orderCustume()
+}
+class CosplayShopServiceImpl{
+	
+}
+abstract class CostumeFactory{
+}
+class PokemonCostumeFactory{
+  -static final adjectiveArray
+}
+class WarcraftCostumeFactory{
+  -static final adjectiveArray
+}
+class Equipment {
+    -name;
+	-part;
+	-upgrade;
+	-isEquipped;
+	-durability;
+	-getName();
+	-getPart();
+	-getUpgrade();
+	-isEquipped();
+	-getDurability();
+	+setName();
+	+setPart();
+	+setUpgrade();
+	+setIsEquipped();
+	+setDurability();
+	+wear();
+	+remove();    
+}
+class Helmet
+class Armor
+class Boots
+class Shield
+class Weapon
+Equipment <.. Helmet
+Equipment <.. Armor
+Equipment <.. Boots
+Equipment <.. Shield
+Equipment <.. Weapon
+
+CostumeFactory <|.. PokemonCostumeFactory
+CostumeFactory <|.. WarcraftCostumeFactory
+CosplayShopService <|- CosplayShopServiceImpl
+CosplayShopServiceImpl *-> Equipment
+CosplayShopServiceImpl *-> CostumeFactory
+
+
+@enduml

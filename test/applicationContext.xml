@@ -6,4 +6,5 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
 	<context:annotation-config/>
 	<bean id="computerBuilderService" class="builder.service.ComputerBuilderServiceImpl"></bean>
+	<bean id="cosplayShopService" class="abstractFactory.service.CosplayShopServiceImpl"></bean>
 </beans>
